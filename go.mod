@@ -33,6 +33,7 @@ require (
 	github.com/Azure/go-autorest/autorest v0.11.18
 	github.com/Azure/go-autorest/autorest/adal v0.9.13
 	github.com/Azure/go-autorest/autorest/azure/auth v0.5.7
+	github.com/Azure/go-autorest/autorest/azure/cli v0.4.2 // indirect
 	github.com/GoogleCloudPlatform/cloudsql-proxy v1.22.0
 	github.com/aws/aws-sdk-go v1.38.35
 	github.com/census-instrumentation/opencensus-proto v0.3.0 // indirect
