@@ -28,7 +28,7 @@
 // credentials and a service URL; see
 // https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/storage/azblob
 // for a more complete descriptions of each approach.
-//   - AZURE_STORAGE_ACCOUNT: The service account name. Required.
+//   - AZURE_STORAGE_ACCOUNT: The service account name. Required if not set as "storage_account" in the URL query string parameter.
 //   - AZURE_STORAGE_KEY: To use a shared key credential. The service account
 //     name and key are passed to NewSharedKeyCredential and then the
 //     resulting credential is passed to NewServiceClientWithSharedKey.
@@ -216,6 +216,8 @@ func (o *ServiceURLOptions) withOverrides(urlValues url.Values) (*ServiceURLOpti
 				return nil, err
 			}
 			retval.IsLocalEmulator = isLocalEmulator
+		case "storage_account":
+			retval.AccountName = value
 		default:
 			return nil, fmt.Errorf("unknown query parameter %q", param)
 		}
